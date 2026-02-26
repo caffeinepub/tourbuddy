@@ -1,0 +1,174 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-top-navigation-bar-with-the-tourbuddy-logo-brand-name-a-global-alert-status-indicator-e-g-all-clear-active-incidents-and-a-user-profile-logout-area",
+      "featureTitle": "Create a top navigation bar with the TourBuddy logo/brand name, a global alert status indicator (e.g., 'All Clear', 'Active Incidents'), and a user profile/logout area.",
+      "files": [
+        "frontend/src/components/DashboardLayout.tsx",
+        "frontend/src/components/TopNavigation.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-left-sidebar-with-navigation-links-for-overview-home-incidents-geo-fence-alerts-risk-heatmap-and-volunteer-management-highlight-the-active-section",
+      "featureTitle": "Create a left sidebar with navigation links for: Overview (home), Incidents, Geo-fence Alerts, Risk Heatmap, and Volunteer Management. Highlight the active section.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/DashboardLayout.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-main-overview-page-as-the-dashboard-home-display-four-kpi-summary-cards-total-active-incidents-active-geo-fence-alerts-volunteers-on-duty-and-tourist-areas-monitored-each-card-shows-a-count-and-a-trend-indicator",
+      "featureTitle": "Create a main Overview page as the dashboard home. Display four KPI summary cards: Total Active Incidents, Active Geo-fence Alerts, Volunteers On Duty, and Tourist Areas Monitored. Each card shows a count and a trend indicator.",
+      "files": [
+        "frontend/src/components/KPICard.tsx",
+        "frontend/src/pages/Overview.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-recent-incidents-table-section-on-the-overview-page-showing-columns-incident-id-location-type-severity-color-coded-low-medium-high-critical-status-and-reported-time-populate-with-realistic-mock-data",
+      "featureTitle": "Create a Recent Incidents table section on the Overview page showing columns: Incident ID, Location, Type, Severity (color-coded: Low/Medium/High/Critical), Status, and Reported Time. Populate with realistic mock data.",
+      "files": [
+        "frontend/src/components/IncidentsTable.tsx",
+        "frontend/src/pages/Overview.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-risk-heatmap-placeholder-section-that-displays-a-stylized-svg-based-zone-map-with-color-coded-risk-zones-green-safe-yellow-caution-red-high-risk-representing-tourist-areas-use-static-mock-data-for-zone-risk-levels",
+      "featureTitle": "Create a Risk Heatmap placeholder section that displays a stylized SVG-based zone map with color-coded risk zones (green = safe, yellow = caution, red = high risk) representing tourist areas. Use static mock data for zone risk levels.",
+      "files": [
+        "frontend/src/components/RiskHeatmap.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-an-active-geo-fence-alerts-panel-on-the-overview-page-listing-current-alerts-with-zone-name-alert-type-triggered-time-and-a-dismiss-acknowledge-button-ui-only-no-backend",
+      "featureTitle": "Create an Active Geo-fence Alerts panel on the Overview page listing current alerts with zone name, alert type, triggered time, and a dismiss/acknowledge button (UI only, no backend).",
+      "files": [
+        "frontend/src/components/GeoFenceAlerts.tsx",
+        "frontend/src/pages/Overview.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-volunteer-management-section-accessible-from-the-sidebar-showing-a-list-table-of-volunteers-with-name-badge-id-area-assigned-status-active-off-duty-on-break-and-last-check-in-time-populate-with-mock-data",
+      "featureTitle": "Create a Volunteer Management section accessible from the sidebar, showing a list/table of volunteers with: Name, Badge ID, Area Assigned, Status (Active/Off Duty/On Break), and Last Check-in time. Populate with mock data.",
+      "files": [
+        "frontend/src/components/VolunteerTable.tsx",
+        "frontend/src/pages/VolunteerManagement.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-cohesive-visual-theme-across-the-entire-dashboard-dark-navy-slate-background-with-amber-gold-accents-for-alerts-and-highlights-clean-sans-serif-typography-card-based-layout-with-subtle-shadows-and-borders-the-aesthetic-should-evoke-authority-and-situational-awareness-appropriate-for-a-safety-command-center",
+      "featureTitle": "Apply a cohesive visual theme across the entire dashboard: dark navy/slate background with amber/gold accents for alerts and highlights, clean sans-serif typography, card-based layout with subtle shadows and borders. The aesthetic should evoke authority and situational awareness appropriate for a safety command center.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-the-generated-dashboard-hero-logo-image-as-a-static-asset-from-frontend-public-assets-generated",
+      "featureTitle": "Render the generated dashboard hero/logo image as a static asset from frontend/public/assets/generated.",
+      "files": [
+        "frontend/src/components/TopNavigation.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "TourBuddy Front Dashboard Interface",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create top navigation bar with TourBuddy branding, global alert status indicator, and user profile area",
+      "acceptanceCriteria": [
+        "Navigation bar is visible at the top of every dashboard page",
+        "Brand name 'TourBuddy' is displayed prominently",
+        "Global alert status badge is visible with appropriate color coding",
+        "User profile area is present in the top-right"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/TopNavigation.tsx",
+          "operation": "create",
+          "description": "Create top navigation component displaying TourBuddy logo from frontend/public/assets/generated/tourbuddy-logo.dim_256x256.png, global alert status badge with color-coded states (All Clear green, Active Incidents amber/red), and user profile area with mock user data in top-right corner. Use dark navy background with amber accents matching the dashboard theme."
+        },
+        {
+          "path": "frontend/src/components/DashboardLayout.tsx",
+          "operation": "create",
+          "description": "Create dashboard layout component that wraps all dashboard pages with TopNavigation at the top and main content area below. Ensure navigation bar is consistently rendered across all dashboard views."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Create left sidebar navigation with links for Overview, Incidents, Geo-fence Alerts, Risk Heatmap, and Volunteer Management with active state highlighting",
+      "acceptanceCriteria": [
+        "Sidebar contains all five navigation items",
+        "Active navigation item is visually highlighted",
+        "Sidebar is collapsible or fixed on desktop layout"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Sidebar.tsx",
+          "operation": "create",
+          "description": "Create sidebar navigation component with five navigation items: Overview (home), Incidents, Geo-fence Alerts, Risk Heatmap, and Volunteer Management. Implement active state highlighting using amber accent color. Make sidebar fixed on desktop with optional collapse functionality. Use dark navy background consistent with dashboard theme."
+        },
+        {
+          "path": "frontend/src/components/DashboardLayout.tsx",
+          "operation": "modify",
+          "description": "Integrate Sidebar component into the layout, positioning it on the left side with appropriate spacing and responsive behavior. Ensure sidebar and main content area work together in a flex or grid layout."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Set up React Router with routes for all dashboard pages: Overview (/), Incidents (/incidents), Geo-fence Alerts (/geofence-alerts), Risk Heatmap (/risk-heatmap), and Volunteer Management (/volunteers). Wrap routes with DashboardLayout component to ensure TopNavigation and Sidebar are rendered on all pages. Set Overview as the default route."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create Overview page as dashboard home displaying four KPI summary cards with counts and trend indicators",
+      "acceptanceCriteria": [
+        "Four KPI cards are displayed in a responsive grid",
+        "Each card shows a label, a numeric value (mocked/static), and a trend arrow",
+        "Cards adapt layout for different screen sizes"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/KPICard.tsx",
+          "operation": "create",
+          "description": "Create reusable KPI card component that displays a label, numeric value, and trend indicator (up/down arrow with percentage). Style with card-based layout using subtle shadows, borders, and dark navy background with amber highlights for positive trends."
+        },
+        {
+          "path": "frontend/src/pages/Overview.tsx",
+          "operation": "create",
+          "description": "Create Overview page as the main dashboard home displaying four KPI cards in a responsive grid: Total Active Incidents (mock: 12, +8%), Active Geo-fence Alerts (mock: 5, -2%), Volunteers On Duty (mock: 34, +12%), and Tourist Areas Monitored (mock: 18, stable). Use responsive grid layout (2x2 on desktop, stacked on mobile)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create Recent Incidents table on Overview page showing incident details with color-coded severity",
+      "acceptanceCriteria": [
+        "Table displays at least 6 mock incident rows",
+        "Severity is shown as a color-coded badge",
+        "Status column shows Open/In Progress/Resolved states",
+        "Table is scrollable on smaller screens"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/IncidentsTable.tsx",
+          "operation": "create",
+          "description": "Create incidents table component displaying columns: Incident ID, Location, Type, Severity (color-coded badges: Low=green, Medium=yellow, High=orange, Critical=red), Status (Open/In Progress/Resolved), and Reported Time. Populate with at least 6 realistic mock incidents. Make table responsive with horizontal scrolling on mobile."
+        },
+        {
+          "path": "frontend/src/pages/Overview.tsx",
+          "operation": "modify",
+          "description": "Add Recent Incidents table section below the KPI cards on the Overview page. Include section heading and integrate IncidentsTable component with appropriate spacing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Create Risk Heatmap section with color-coded SVG zone map representing tourist area risk levels",
+      "acceptanceCriteria": [
+        "Heatmap section renders with at least 6 labeled zones",
+        "Zones are colored according to risk level (green/yellow/red)",
+        "A legend explaining the color coding is visible"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/RiskHeatmap.tsx",
+          "operation": "create",
+          "description": "Create risk heatmap component with SVG-based zone map showing at least 6 labeled tourist zones (e.g., Downtown, Harbor District, Old Town, Beach Area, Market Square, Historic Quarter). Color-code zones by risk level: green=safe, yellow=caution, red=high risk. Include legend explaining color coding. Use static mock data for zone risk levels. Style zones with hover effects and subtle borders."
+        },
+        {
+          "path": "frontend/src/pages/RiskHeatmap.tsx",
+          "operation": "create",
+          "description": "Create Risk Heatmap page accessible from sidebar navigation, displaying the RiskHeatmap component with page title and description explaining the heatmap's purpose for monitoring tourist area safety."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Create Active Geo-fence Alerts panel on Overview page with dismissible alerts",
+      "acceptanceCriteria": [
+        "Panel lists at least 3 mock geo-fence alerts",
+        "Each alert shows zone name, type, and triggered time",
+        "Acknowledge button is clickable and removes the alert from the list client-side"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/GeoFenceAlerts.tsx",
+          "operation": "create",
+          "description": "Create geo-fence alerts panel component listing at least 3 mock active alerts with zone name, alert type (e.g., Overcrowding, Unauthorized Entry, Suspicious Activity), triggered time, and acknowledge button. Implement client-side dismissal that removes alert from list on button click. Style alerts with amber accent for warnings and red for critical alerts."
+        },
+        {
+          "path": "frontend/src/pages/Overview.tsx",
+          "operation": "modify",
+          "description": "Add Active Geo-fence Alerts panel to Overview page in a sidebar or below the incidents table. Position it prominently with section heading and integrate GeoFenceAlerts component."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Create Volunteer Management section with filterable volunteer list showing status and assignment details",
+      "acceptanceCriteria": [
+        "Volunteer list displays at least 8 mock entries",
+        "Status is shown with color-coded badge",
+        "Table is filterable by status (Active/Off Duty) using a dropdown or tab UI"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/VolunteerTable.tsx",
+          "operation": "create",
+          "description": "Create volunteer table component displaying at least 8 mock volunteers with columns: Name, Badge ID, Area Assigned, Status (color-coded badges: Active=green, Off Duty=gray, On Break=yellow), and Last Check-in time. Implement filter dropdown or tabs to filter by status. Make table responsive with mobile-friendly layout."
+        },
+        {
+          "path": "frontend/src/pages/VolunteerManagement.tsx",
+          "operation": "create",
+          "description": "Create Volunteer Management page accessible from sidebar navigation, displaying page title, filter controls, and VolunteerTable component with appropriate spacing and layout."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Apply cohesive dark navy/slate theme with amber/gold accents throughout the dashboard for command center aesthetic",
+      "acceptanceCriteria": [
+        "Consistent color palette (dark navy background, amber/gold accents) is used throughout",
+        "All pages share the same typography and spacing system",
+        "Cards and panels have consistent border-radius, shadow, and padding"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define cohesive dashboard theme with dark navy/slate backgrounds (e.g., #0f172a, #1e293b), amber/gold accents for alerts and highlights (#f59e0b, #fbbf24), clean sans-serif typography system. Set global styles for cards with consistent border-radius, subtle shadows, and padding. Ensure color-coded severity states (green, yellow, orange, red) are defined as CSS custom properties or Tailwind theme extensions for reuse across components."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom color palette matching dashboard requirements: dark navy backgrounds, amber/gold accents, severity colors (safe green, caution yellow, high-risk red). Define custom spacing, shadow, and border-radius utilities to ensure consistent card and panel styling across all dashboard components."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Render generated TourBuddy logo image from static assets in navigation branding area",
+      "acceptanceCriteria": [
+        "Image is referenced from frontend/public/assets/generated",
+        "Image is displayed in the sidebar or navigation branding area"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/TopNavigation.tsx",
+          "operation": "modify",
+          "description": "Update TopNavigation component to display the generated TourBuddy logo from frontend/public/assets/generated/tourbuddy-logo.dim_256x256.png in the branding area. Ensure the logo is properly sized and positioned alongside the TourBuddy text brand name."
+        }
+      ]
+    }
+  ]
+}

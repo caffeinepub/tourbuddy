@@ -1,0 +1,186 @@
+{
+  "kind": "build_request",
+  "title": "TourBuddy Front Dashboard Interface",
+  "projectName": "TourBuddy",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a top navigation bar with the TourBuddy logo/brand name, a global alert status indicator (e.g., 'All Clear', 'Active Incidents'), and a user profile/logout area.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "just create the front dashboard interface"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigation bar is visible at the top of every dashboard page",
+        "Brand name 'TourBuddy' is displayed prominently",
+        "Global alert status badge is visible with appropriate color coding",
+        "User profile area is present in the top-right"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Create a left sidebar with navigation links for: Overview (home), Incidents, Geo-fence Alerts, Risk Heatmap, and Volunteer Management. Highlight the active section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "just create the front dashboard interface"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Sidebar contains all five navigation items",
+        "Active navigation item is visually highlighted",
+        "Sidebar is collapsible or fixed on desktop layout"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a main Overview page as the dashboard home. Display four KPI summary cards: Total Active Incidents, Active Geo-fence Alerts, Volunteers On Duty, and Tourist Areas Monitored. Each card shows a count and a trend indicator.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "just create the front dashboard interface"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Four KPI cards are displayed in a responsive grid",
+        "Each card shows a label, a numeric value (mocked/static), and a trend arrow",
+        "Cards adapt layout for different screen sizes"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create a Recent Incidents table section on the Overview page showing columns: Incident ID, Location, Type, Severity (color-coded: Low/Medium/High/Critical), Status, and Reported Time. Populate with realistic mock data.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "just create the front dashboard interface"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Table displays at least 6 mock incident rows",
+        "Severity is shown as a color-coded badge",
+        "Status column shows Open/In Progress/Resolved states",
+        "Table is scrollable on smaller screens"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create a Risk Heatmap placeholder section that displays a stylized SVG-based zone map with color-coded risk zones (green = safe, yellow = caution, red = high risk) representing tourist areas. Use static mock data for zone risk levels.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "just create the front dashboard interface"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Heatmap section renders with at least 6 labeled zones",
+        "Zones are colored according to risk level (green/yellow/red)",
+        "A legend explaining the color coding is visible"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create an Active Geo-fence Alerts panel on the Overview page listing current alerts with zone name, alert type, triggered time, and a dismiss/acknowledge button (UI only, no backend).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "just create the front dashboard interface"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Panel lists at least 3 mock geo-fence alerts",
+        "Each alert shows zone name, type, and triggered time",
+        "Acknowledge button is clickable and removes the alert from the list client-side"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Create a Volunteer Management section accessible from the sidebar, showing a list/table of volunteers with: Name, Badge ID, Area Assigned, Status (Active/Off Duty/On Break), and Last Check-in time. Populate with mock data.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "just create the front dashboard interface"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Volunteer list displays at least 8 mock entries",
+        "Status is shown with color-coded badge",
+        "Table is filterable by status (Active/Off Duty) using a dropdown or tab UI"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Apply a cohesive visual theme across the entire dashboard: dark navy/slate background with amber/gold accents for alerts and highlights, clean sans-serif typography, card-based layout with subtle shadows and borders. The aesthetic should evoke authority and situational awareness appropriate for a safety command center.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "just create the front dashboard interface"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Consistent color palette (dark navy background, amber/gold accents) is used throughout",
+        "All pages share the same typography and spacing system",
+        "Cards and panels have consistent border-radius, shadow, and padding"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Render the generated dashboard hero/logo image as a static asset from frontend/public/assets/generated.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Image is referenced from frontend/public/assets/generated",
+        "Image is displayed in the sidebar or navigation branding area"
+      ]
+    }
+  ],
+  "constraints": [
+    "All data displayed on the dashboard must use static mock data — no backend integration required for this build",
+    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui",
+    "Do not implement authentication flows in this build"
+  ],
+  "nonGoals": [
+    "Backend Motoko canister implementation",
+    "Internet Identity authentication integration",
+    "Real-time data or WebSocket connections",
+    "Actual geolocation or map API integration",
+    "Mobile app or tourist-facing interface"
+  ],
+  "imageRequirements": {
+    "required": [
+      "TourBuddy shield-and-compass logo mark with a dark navy and amber color scheme, flat vector style (tourbuddy-logo.dim_256x256.png)"
+    ],
+    "edits": []
+  }
+}

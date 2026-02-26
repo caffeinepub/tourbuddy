@@ -1,0 +1,245 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T18:18:28.886Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 9,
+    "implemented": 9,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Create a top navigation bar with the TourBuddy logo/brand name, a global alert status indicator (e.g., 'All Clear', 'Active Incidents'), and a user profile/logout area.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/TopNavigation.tsx",
+          "frontend/src/components/DashboardLayout.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/TopNavigation.tsx",
+          "frontend/src/components/DashboardLayout.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Create a left sidebar with navigation links for: Overview (home), Incidents, Geo-fence Alerts, Risk Heatmap, and Volunteer Management. Highlight the active section.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Sidebar.tsx",
+          "frontend/src/components/DashboardLayout.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/DashboardLayout.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Create a main Overview page as the dashboard home. Display four KPI summary cards: Total Active Incidents, Active Geo-fence Alerts, Volunteers On Duty, and Tourist Areas Monitored. Each card shows a count and a trend indicator.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/KPICard.tsx",
+          "frontend/src/pages/Overview.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/KPICard.tsx",
+          "frontend/src/pages/Overview.tsx"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Create a Recent Incidents table section on the Overview page showing columns: Incident ID, Location, Type, Severity (color-coded: Low/Medium/High/Critical), Status, and Reported Time. Populate with realistic mock data.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/IncidentsTable.tsx",
+          "frontend/src/pages/Overview.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/IncidentsTable.tsx",
+          "frontend/src/pages/Overview.tsx"
+        ]
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Create a Risk Heatmap placeholder section that displays a stylized SVG-based zone map with color-coded risk zones (green = safe, yellow = caution, red = high risk) representing tourist areas. Use static mock data for zone risk levels.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/RiskHeatmap.tsx",
+          "frontend/src/pages/RiskHeatmap.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/RiskHeatmap.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Create an Active Geo-fence Alerts panel on the Overview page listing current alerts with zone name, alert type, triggered time, and a dismiss/acknowledge button (UI only, no backend).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/GeoFenceAlerts.tsx",
+          "frontend/src/pages/Overview.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/GeoFenceAlerts.tsx",
+          "frontend/src/pages/Overview.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Create a Volunteer Management section accessible from the sidebar, showing a list/table of volunteers with: Name, Badge ID, Area Assigned, Status (Active/Off Duty/On Break), and Last Check-in time. Populate with mock data.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/VolunteerTable.tsx",
+          "frontend/src/pages/VolunteerManagement.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/VolunteerTable.tsx",
+          "frontend/src/pages/VolunteerManagement.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Apply a cohesive visual theme across the entire dashboard: dark navy/slate background with amber/gold accents for alerts and highlights, clean sans-serif typography, card-based layout with subtle shadows and borders. The aesthetic should evoke authority and situational awareness appropriate for a safety command center.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Render the generated dashboard hero/logo image as a static asset from frontend/public/assets/generated.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/TopNavigation.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/TopNavigation.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/Dockerfile",
+    "build-template/LICENSE",
+    "build-template/README.md",
+    "build-template/deploy.sh",
+    "build-template/icp.yaml",
+    "build-template/package.json",
+    "build-template/pnpm-lock.yaml",
+    "build-template/pnpm-workspace.yaml",
+    "build-template/scripts/prune-unused-images.js",
+    "build-template/scripts/resize-images.js",
+    "build-template/src/backend/canister.yaml",
+    "build-template/src/backend/system-idl/aaaaa-aa.did",
+    "build-template/src/frontend/canister.yaml",
+    "build-template/src/frontend/components.json",
+    "build-template/src/frontend/env.json",
+    "build-template/src/frontend/eslint-rules/no-bigint-in-query-keys.js",
+    "build-template/src/frontend/eslint-rules/require-internet-identity-provider.js",
+    "build-template/src/frontend/eslint.config.js",
+    "build-template/src/frontend/package.json",
+    "build-template/src/frontend/postcss.config.js",
+    "build-template/src/frontend/src/components/ui/accordion.tsx",
+    "build-template/src/frontend/src/components/ui/alert-dialog.tsx",
+    "build-template/src/frontend/src/components/ui/alert.tsx",
+    "build-template/src/frontend/src/components/ui/aspect-ratio.tsx",
+    "build-template/src/frontend/src/components/ui/avatar.tsx",
+    "build-template/src/frontend/src/components/ui/badge.tsx",
+    "build-template/src/frontend/src/components/ui/breadcrumb.tsx",
+    "build-template/src/frontend/src/components/ui/button.tsx",
+    "build-template/src/frontend/src/components/ui/calendar.tsx",
+    "build-template/src/frontend/src/components/ui/card.tsx",
+    "build-template/src/frontend/src/components/ui/carousel.tsx",
+    "build-template/src/frontend/src/components/ui/chart.tsx",
+    "build-template/src/frontend/src/components/ui/checkbox.tsx",
+    "build-template/src/frontend/src/components/ui/collapsible.tsx",
+    "build-template/src/frontend/src/components/ui/command.tsx",
+    "build-template/src/frontend/src/components/ui/context-menu.tsx",
+    "build-template/src/frontend/src/components/ui/dialog.tsx",
+    "build-template/src/frontend/src/components/ui/drawer.tsx",
+    "build-template/src/frontend/src/components/ui/dropdown-menu.tsx",
+    "build-template/src/frontend/src/components/ui/form.tsx",
+    "build-template/src/frontend/src/components/ui/hover-card.tsx",
+    "build-template/src/frontend/src/components/ui/input-otp.tsx",
+    "build-template/src/frontend/src/components/ui/input.tsx",
+    "build-template/src/frontend/src/components/ui/label.tsx",
+    "build-template/src/frontend/src/components/ui/menubar.tsx",
+    "build-template/src/frontend/src/components/ui/navigation-menu.tsx",
+    "build-template/src/frontend/src/components/ui/pagination.tsx",
+    "build-template/src/frontend/src/components/ui/popover.tsx",
+    "build-template/src/frontend/src/components/ui/progress.tsx",
+    "build-template/src/frontend/src/components/ui/radio-group.tsx",
+    "build-template/src/frontend/src/components/ui/resizable.tsx",
+    "build-template/src/frontend/src/components/ui/scroll-area.tsx",
+    "build-template/src/frontend/src/components/ui/select.tsx",
+    "build-template/src/frontend/src/components/ui/separator.tsx",
+    "build-template/src/frontend/src/components/ui/sheet.tsx",
+    "build-template/src/frontend/src/components/ui/sidebar.tsx",
+    "build-template/src/frontend/src/components/ui/skeleton.tsx",
+    "build-template/src/frontend/src/components/ui/slider.tsx",
+    "build-template/src/frontend/src/components/ui/sonner.tsx",
+    "build-template/src/frontend/src/components/ui/switch.tsx",
+    "build-template/src/frontend/src/components/ui/table.tsx",
+    "build-template/src/frontend/src/components/ui/tabs.tsx",
+    "build-template/src/frontend/src/components/ui/textarea.tsx",
+    "build-template/src/frontend/src/components/ui/toggle-group.tsx",
+    "build-template/src/frontend/src/components/ui/toggle.tsx",
+    "build-template/src/frontend/src/components/ui/tooltip.tsx",
+    "build-template/src/frontend/src/hooks/use-mobile.tsx",
+    "build-template/src/frontend/src/lib/utils.ts",
+    "build-template/src/frontend/tsconfig.json",
+    "build-template/src/frontend/vite.config.js",
+    "build-template/tsconfig.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/public/assets/generated/tourbuddy-logo.dim_256x256.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/AppSidebar.tsx",
+    "frontend/src/components/DashboardLayout.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/GeoFenceAlerts.tsx",
+    "frontend/src/components/IncidentsTable.tsx",
+    "frontend/src/components/KPICard.tsx",
+    "frontend/src/components/RiskHeatmap.tsx",
+    "frontend/src/components/TopNavigation.tsx",
+    "frontend/src/components/VolunteerTable.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/lib/mockData.ts",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/GeoFenceAlertsPage.tsx",
+    "frontend/src/pages/IncidentsPage.tsx",
+    "frontend/src/pages/Overview.tsx",
+    "frontend/src/pages/RiskHeatmapPage.tsx",
+    "frontend/src/pages/VolunteerManagement.tsx",
+    "frontend/src/ui-summary.json",
+    "frontend/src/utils/StorageClient.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

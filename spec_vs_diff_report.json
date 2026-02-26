@@ -1,0 +1,74 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T18:18:28.882Z",
+  "summary": "The diff implements nearly all requested requirements: top navigation bar (REQ-1), left sidebar with all five nav items and active highlighting (REQ-2), Overview page with four KPI cards (REQ-3), Recent Incidents table with mock data (REQ-4), Active Geo-fence Alerts panel with acknowledge functionality (REQ-6), Volunteer Management section (REQ-7), cohesive dark navy/amber visual theme (REQ-8), and logo image referenced from frontend/public/assets/generated (REQ-9). The Risk Heatmap component (REQ-5) is present in the diff (RiskHeatmap.tsx) but its page (RiskHeatmapPage.tsx) was omitted from the diff summary due to file limits. One constraint violation is noted: files under frontend/src/hooks/ appear in the diff though useQueries.ts only exports an empty placeholder.",
+  "missing_requirements": [
+    {
+      "id": "REQ-5",
+      "requirement": "Create a Risk Heatmap placeholder section with SVG-based zone map, color-coded risk zones, at least 6 labeled zones, and a visible legend.",
+      "reason": "RiskHeatmap.tsx component exists and RiskHeatmapPage.tsx is imported in App.tsx, but RiskHeatmapPage.tsx itself was omitted from the diff due to truncation limits. The component appears complete based on truncated content, so this may be implemented but cannot be fully confirmed from the diff.",
+      "evidence": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/RiskHeatmap.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "A dedicated Incidents Management page with severity and status filter dropdowns was implemented as a separate routed page.",
+      "reason": "The build request only asks for a Recent Incidents table section on the Overview page (REQ-4). A full dedicated Incidents page with filtering was not requested.",
+      "evidence": [
+        "frontend/src/pages/IncidentsPage.tsx",
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "description": "A dedicated Geo-fence Alerts page with summary cards was implemented as a separate routed page.",
+      "reason": "REQ-6 only requests a Geo-fence Alerts panel on the Overview page. A full dedicated page with summary stat cards was not part of the requirements.",
+      "evidence": [
+        "frontend/src/pages/GeoFenceAlertsPage.tsx",
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "description": "A Footer component with a caffeine.ai attribution link was added to the dashboard layout.",
+      "reason": "No footer component or external attribution link was requested anywhere in the build request.",
+      "evidence": [
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/components/DashboardLayout.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.78,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/AppSidebar.tsx",
+    "frontend/src/components/DashboardLayout.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/GeoFenceAlerts.tsx",
+    "frontend/src/components/IncidentsTable.tsx",
+    "frontend/src/components/KPICard.tsx",
+    "frontend/src/components/RiskHeatmap.tsx",
+    "frontend/src/components/TopNavigation.tsx",
+    "frontend/src/components/VolunteerTable.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/lib/mockData.ts",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/GeoFenceAlertsPage.tsx",
+    "frontend/src/pages/IncidentsPage.tsx",
+    "frontend/src/pages/Overview.tsx",
+    "frontend/src/pages/RiskHeatmapPage.tsx",
+    "frontend/src/pages/VolunteerManagement.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "frontend/src/index.css": "Global styles with dark navy/amber OKLCH color system, Google Fonts imports for Inter and Space Grotesk, and custom scrollbar utilities for the command center theme.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with custom navy/amber color palettes, Space Grotesk display font, custom shadows (card, glow), and severity/status color tokens.",
+  "frontend/src/App.tsx": "Main app with TanStack Router setup defining five routes (Overview, Incidents, Geo-fence Alerts, Risk Heatmap, Volunteers) wrapped in DashboardLayout via root route.",
+  "frontend/src/components/TopNavigation.tsx": "Sticky top navigation bar with TourBuddy logo/branding, dynamic global alert status badge (All Clear/Warning/Critical), notification bell, and user profile dropdown.",
+  "frontend/src/components/AppSidebar.tsx": "Left sidebar using shadcn Sidebar components with five navigation items, active state amber highlighting, system status indicator, and version info in footer.",
+  "frontend/src/components/DashboardLayout.tsx": "Layout wrapper using SidebarProvider that composes AppSidebar, TopNavigation, main content area, and Footer for all dashboard pages.",
+  "frontend/src/components/Footer.tsx": "Footer with dynamic year, caffeine.ai attribution link with UTM tracking, and TourBuddy branding.",
+  "frontend/src/components/KPICard.tsx": "Reusable KPI metric card with icon, value, label, trend indicator (up/down/stable), and four accent color variants (amber, safe, danger, blue).",
+  "frontend/src/components/IncidentsTable.tsx": "Responsive incidents table with color-coded severity and status badges, hover effects, optional action column, and horizontal scroll on mobile.",
+  "frontend/src/components/GeoFenceAlerts.tsx": "Interactive geo-fence alerts panel with client-side acknowledgment/dismissal, severity-based styling, and empty state when all alerts are cleared.",
+  "frontend/src/components/RiskHeatmap.tsx": "SVG-based interactive zone risk map with 8 labeled tourist zones, color-coded risk levels, incident count badges, hover tooltips, and a legend.",
+  "frontend/src/components/VolunteerTable.tsx": "Filterable volunteer roster table with status tabs (All/Active/Off Duty/On Break), avatar initials, status dot indicators, and responsive scroll area.",
+  "frontend/src/lib/mockData.ts": "Static mock data module exporting 10 incidents, 5 geo-fence alerts, and 10 volunteers with realistic details for all dashboard pages.",
+  "frontend/src/pages/Overview.tsx": "Main dashboard home with four KPI cards, recent incidents table (6 rows), and active geo-fence alerts panel in a responsive grid layout.",
+  "frontend/src/pages/IncidentsPage.tsx": "Full incidents management page with severity/status filter dropdowns, summary stat cards, and the complete incidents table.",
+  "frontend/src/pages/GeoFenceAlertsPage.tsx": "Geo-fence alerts page with critical/warning/total summary cards and the full dismissible alerts panel.",
+  "frontend/src/pages/RiskHeatmapPage.tsx": "Risk heatmap page with info banner, interactive SVG zone map, and a zone summary grid with risk-level color coding.",
+  "frontend/src/pages/VolunteerManagement.tsx": "Volunteer management page with total/active/on-break/off-duty stat cards and the filterable volunteer roster table.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for future backend React Query hooks; currently empty as the dashboard uses static mock data."
+}
